@@ -27,9 +27,25 @@
 <hr/>
 
 <div>
-  <span>{{ serverCreationStatus }}</span>
+  <!--*ngIf="serverCreated; else noServer"-->
+  <span *ngIf="serverCreated; else noServer">{{ serverCreationStatus }}</span>
+  <!--Caso de else-->
+  <!-- <ng-template #noServer>No server created</ng-template> -->
 </div>
 
 <!--Render component by selector-->
 <app-server></app-server>
 <app-server></app-server>
+
+<!--Exercicio 2-->
+<!-- <input
+    type="text"
+    class="form-control"
+    [(ngModel)]=username />
+
+<p>{{userName}}</p>
+<button class="btn btn-primary form-control"
+  [disabled]="usernameIsNull()"
+  (click)="resetUserName()">Reset
+</button>
+<p>{{username}}</p> -->
