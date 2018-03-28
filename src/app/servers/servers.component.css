@@ -1,0 +1,7 @@
+.custom-form{
+    width: 30%;
+}
+
+.btn[disabled] {
+    background-color: lightgray;
+}

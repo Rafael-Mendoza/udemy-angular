@@ -1,0 +1,35 @@
+<!-- <label>Server Name DataBinding</label> -->
+
+<!--Event databinding-->
+<!-- <input
+  type="text"
+  class="form-control"
+  (input)="onUpdateServerName($event)" /> -->
+
+<div class="form-group custom-form">
+  <label>Server Name</label>
+  <!--Two way databinding using directive ngModel-->
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="serverName" />
+
+  <!--String interpolation-->
+  <!-- <p>{{ serverName }}</p> -->
+
+  <!--Event-->
+  <button class="btn btn-primary form-control"
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()">Add Server
+  </button>
+</div>
+
+<hr/>
+
+<div>
+  <span>{{ serverCreationStatus }}</span>
+</div>
+
+<!--Render component by selector-->
+<app-server></app-server>
+<app-server></app-server>
