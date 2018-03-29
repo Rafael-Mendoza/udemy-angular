@@ -8,16 +8,23 @@ import { Component, OnInit } from '@angular/core';
 export class ServerComponent implements OnInit {
 
   serverId: number = 10;
-  serverStatus: string = 'offline';
+  serverStatus: string = '';
 
   getServerStatus()
   {
     return this.serverStatus;
   }
 
-  constructor() { }
+  constructor() {
+    this.serverStatus = Math.random()  > 0.5 ? 'online' : 'offline';
+  }
 
   ngOnInit() {
+  }
+
+  getColor()
+  {
+    return this.serverStatus === 'online' ? 'green' : 'red'
   }
 
 
